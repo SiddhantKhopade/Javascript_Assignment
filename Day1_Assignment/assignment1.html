@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Assignment 1</title>
+</head>
+<body>
+    <h2>Display Current Day and Time</h2>
+
+    <p id="day"></p>
+    <p id="time"></p>    
+    <script>
+        var date = new Date()
+
+        // Diplay Current Day
+        var day = date.getDay(); // Returns day as number 0-6
+
+        // Array of weekdays  , Days are numbered from 0 to 6
+        var week = ['Sunday', 'Monday', 'Tuesday', 
+            'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+        document.getElementById('day').
+        innerHTML='Today is : '+week[day]; 
+
+        // Display Current Time
+
+        // Getting Hour Value
+        var hours = date.getHours(); // returns hour 0-23
+        // checks AM or PM 
+        var ampm = hours >= 12 ? 'PM' : 'AM'; // ternary operation
+         hours = hours % 12;
+         hours = hours ? hours : 12; // Converting hours into 12 hour format
+
+        // Getting minutes and seconds value
+        var minutes = date.getMinutes(); // returns minutes 0-59
+        minutes = minutes < 10 ? '0' + minutes : minutes;
+        // Display Time
+        var Time = hours + " " + ampm + " : " + minutes +  
+            " : " + date.getSeconds();
+
+        document.getElementById('time').
+        innerHTML='Current Time is : '+Time; 
+
+    </script>
+</body>
+</html>

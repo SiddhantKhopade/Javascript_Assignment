@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assignment 3</title>
+</head>
+<body>
+    <h2>Displaying Date in Different Formats</h2>
+    <p id="format_1"></p>
+    <p id="format_2"></p>
+    <p id="format_3"></p>
+    <p id="format_4"></p>
+
+    <script>
+        //Getting Current Date
+        var currentDate = new Date()
+        curDate = currentDate.getDate()
+        curMonth = currentDate.getMonth()
+        curYear = currentDate.getFullYear()
+
+        var months = ["January", "February", "March", "April", "May",
+         "June", "July", "August", "September", "October", "November", "December"];
+
+         curMonth = months[curMonth]
+
+
+        //Current date in  mm-dd-yyyy format
+
+        document.getElementById('format_1').
+        innerHTML = "Date in 'mm-dd-yyyy' format : "+curMonth+"-"+curDate+"-"+curYear;
+        
+        //Current date in  mm/dd/yyyy format
+
+        document.getElementById('format_2').
+        innerHTML = "Date in 'mm/dd/yyyy' format : "+curMonth+"/"+curDate+"/"+curYear;
+
+        //Current date in  dd-mm-yyyy format
+
+        document.getElementById('format_3').
+        innerHTML = "Date in 'dd-mm-yyyy' format : "+curDate+"-"+curMonth+"-"+curYear;
+
+        //Current date in  dd/mm/yyyy format
+
+        document.getElementById('format_4').
+        innerHTML = "Date in 'dd/mm/yyyy' format : "+curDate+"/"+curMonth+"/"+curYear;
+
+    </script>
+</body>
+</html>
